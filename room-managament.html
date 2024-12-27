@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Room Management</title>
+    <link rel="stylesheet" href="room-style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Hotel Room Management</h1>
+    </header>
+
+    <!-- Main Content -->
+    <main class="ccc">
+        <!-- Room Type Management -->
+        <section id="room-type-management">
+            <h2>Room Type Management</h2>
+            <div class="add-room-type">
+                <input type="text" id="roomTypeInput" placeholder="Enter room type">
+                <button onclick="addRoomType()">Add Room Type</button>
+            </div>
+            <ul id="roomTypeList"></ul>
+        </section>
+
+        <!-- Room Status Management -->
+        <section id="room-status-management">
+            <h2>Room Status Management</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Room Number</th>
+                        <th>Type</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="roomTableBody">
+                    <!-- Example Room Rows -->
+                    <tr>
+                        <td>101</td>
+                        <td>Deluxe</td>
+                        <td><span class="status">Available</span></td>
+                        <td>
+                            <select onchange="updateRoomStatus(this, '101')">
+                                <option value="Available">Đã được đặt</option>
+                                <option value="Occupied">Còn Trống</option>
+                                <option value="Cleaning">Đang sử dụng</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>102</td>
+                        <td>Suite</td>
+                        <td><span class="status">Occupied</span></td>
+                        <td>
+                            <select onchange="updateRoomStatus(this, '102')">
+                                <option value="Available">Đã được đặt</option>
+                                <option value="Occupied">Còn Trống</option>
+                                <option value="Cleaning">Đang sử dụng</option>
+                            </select>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Room History -->
+        <section id="room-history">
+            <h2>Room History</h2>
+            <ul id="historyList">
+                <!-- Room history will be shown here -->
+            </ul>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Quán quân Hotel Management</p>
+    </footer>
+
+    <script src="room-script.js"></script>
+</body>
+</html>
